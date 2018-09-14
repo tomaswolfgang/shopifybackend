@@ -1,0 +1,22 @@
+The process
+
+TECH STACK
+DB has simple static setup (Orders, LineItems, Products, shops, etc.) At first I thought MySQL would be good because of the static relational structure, but auto-sharding + dynamic schemas means simple horizontal scaling (in case my store blows up)/easy schema manipulation if I forget to add properties.
+MongoDB
+
+server NodeJs
+I'm looking for speed (in case my online store blows up). Node with its single threaded execution/non-blocking IO and the site would have any intensive server-side processing. 
+I know javascript pretty well/have worked with NodeJs (ES6)
+
+back-end framework
+express -- large community, graphql compatibility, lightweight, 
+
+front-end
+React -- virtualDOM makes client changes fast, modular development
+REDUX
+
+
+1. understand what the heck kubernetes and docker are
+I recently built my website using a react front-end with a simple node back-end (hosted on heroku) and mongodb (with mLab), so I had a bit of an idea about how those would fit in with my project. 
+I'd heard of kubernetes and docker but had no idea what they were.
+So before developing 

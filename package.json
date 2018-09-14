@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Shopify backend intern",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomaswolfgang/shopifybackend.git"
+  },
+  "keywords": [
+    "node",
+    "mongoose",
+    "mongodb",
+    "graphql"
+  ],
+  "author": "Thomas Wong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomaswolfgang/shopifybackend/issues"
+  },
+  "homepage": "https://github.com/tomaswolfgang/shopifybackend#readme",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "mongoose": "^5.2.14"
+  }
+}
