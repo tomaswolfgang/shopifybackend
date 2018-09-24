@@ -1,10 +1,13 @@
 Hi!
 I'm going to outline the usage for this project
+
 <
 DOCKER
 after running the docker image
+
 going to http://localhost:3000 should display a page saying "Hi!"
 if not then use your local ip address with the same port i.e. 192.168.10.100:3000
+
 assuming that localhost is working for you you can begin to navigate through the project by going to
 http://localhost:3000/home
 
