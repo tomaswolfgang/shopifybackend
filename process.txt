@@ -17,24 +17,24 @@ mongoose js -- connects to mongodb, enforces schema structures
 testing
 mocha and chai
 
+Implementing the full stack with js just made sense given that I have a lot of experience with it.
 
 step 1:
 Understand what a container is...
 Understand what the heck kubernetes and docker are and how they fit into the container ecosystem
-
 Started with completing tutorials to get a feel for each technology.
 DOCKER IS ACTUALLY REALLY COOL?! (this process of discovery was continued later)
 
 Step 2: figure out how to use express, and mongoose.
 I used express when building my personal website, but I only scratched the surface in terms of the features it offers.
-finished random tutorials on basic usage/routing.
-I would see tutorial steps that could be modified and directly applied to my project.
+finished more random tutorials on basic usage/routing.
+During some of them, I would modify some of the steps and directly apply them to my project.
 Did the same with mongoose. --- Very intuitive schema definitions and methods
 Defined Schemas for User, Shop, Order, Product, LineItem
 
 step 3: How to manage sessions with login.
-I already knew I wanted to have some sort of login system (to control access), just needed to research how it could be done...
----> express-session. Exactly what I was looking for! :))))))
+I already knew I wanted to have some sort of login system to control access, just needed to research how it could be done...
+---> the npm module express-session. Exactly what I was looking for! :))))))
 
 step 4: start creating tests
 Created end points for user creation, login and logout.
@@ -43,23 +43,31 @@ CALLBACK HELL !!!!!
 Modified all the tests to use async await for readability and my own sanity
 
 step 5:
-build out Product, Shop, and Order schema methods
+build out Product, Shop, and Order Model methods
+This was much easier to think about now that I had an idea how everything worked from building the User methods
 
 step 6:
 create test scripts for Product, shop and order with mocha and chai
 async await made this a lot more intuititve
+nonetheless I found holes in the functionality of the Models so this step also encompasses going back and fixing the models
 
 step 7:
 build basic templates with ejs and the get routes for each page
+This step included learning some basic ejs syntax via tutorials/docs and implementing it.
 
 step 8:
-test with live db
+test application on my computer
+Debugged any issues with requests and responses
 
-step 9:
-write Dockerfile
+
+step 9: DOCKER!!
+Now that I was sure everything was working on my local environment
+I had to write Dockerfile and create the docker image to prep for deployment
+
 
 step 10:
-test docker image
+test docker image locally and push the image onto my dockerhub account
 
 step 11:
-upload to kubernetes (still working on this step... ...)
+create my cluster on kubernetes and upload the image!
+check it out at http://35.192.57.165/

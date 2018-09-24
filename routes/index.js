@@ -213,7 +213,7 @@ router.get('/product', (req,res) => {
       else if(req.session.userId){
         //if user is logged in
         vars.user = req.session.userId;
-        Order.findOne({buyer: req.session.userId, active: true})
+        Order.findOne({buyer: req.session.userId, active: true, shop:shopId})
           .exec((err, order) => {
             if(err) {
               res.send({error: true, message: err})

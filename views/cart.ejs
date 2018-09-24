@@ -47,7 +47,7 @@
             <% } %>
           <% } else if(locals.shops){ %>
             <% shops.forEach((shop) => { %>
-              <a href="./cart?shop=<%= shop._id %>">Cart at <%= shop.name %></a>
+              <a href="./cart?shop=<%= shop._id %>">Cart at <%= shop.name %></a><br>
             <% }) %>
           <% } %>
         </div>
