@@ -46,6 +46,20 @@ step 5:
 build out Product, Shop, and Order schema methods
 
 step 6:
-create test scripts for Product, shop and order
+create test scripts for Product, shop and order with mocha and chai
+async await made this a lot more intuititve
 
-test with the db and live
+step 7:
+build basic templates with ejs and the get routes for each page
+
+step 8:
+test with live db
+
+step 9:
+write Dockerfile
+
+step 10:
+test docker image
+
+step 11:
+upload to kubernetes (still working on this step... ...)
