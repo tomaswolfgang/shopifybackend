@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <% include ./partials/head %>
+  </head>
+
+  <body>
+    <div class="page-container">
+      <div class="content-container">
+        <h1>Create New Product</h1>
+        <form method="POST" action="/product/create">
+          <div class="form-spacer">
+            username:<br>
+            <input type="text" name="username" value="" placeholder="username">
+          </div>
+          <div class="form-spacer">
+            password:<br>
+            <input type="password" name="password" value="" placeholder="password">
+          </div>
+          <div class="form-spacer"> <a href="./register">Register</a></div>
+          <div class="form-spacer" ><input type="submit" value="Submit"/></div>
+          <p class="error"><%= error === null ? "" : error %></p>
+        </form>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ./partials/head %>
+  </head>
+
+  <body>
+    <div class="page-container">
+      <header>
+          <% include ./partials/header %>
+      </header>
+      <div class="content-container">
+        <h1>Thank you for your purchase!</h1>
+        <div id="content">
+          <a href="./shop?shop=<%= shop._id %>">Purchase more items at <%= shop.name %></a><br><br>
+          <a href="./history?shop=<%= shop._id %>">See your order history at <%= shop.name %></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

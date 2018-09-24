@@ -1,0 +1,14 @@
+<div class="header">
+  <a class="corner-link" href="./home">Home</a>
+<% if(user){ %>
+  <% if(locals.shop && !locals.cart){ %>
+    <a class="corner-link" href="./cart?shop=<%= shop._id %>">Cart</a>
+  <% } else if(locals.shops) {%>
+    <a class="corner-link" href="./cart">Carts</a>
+  <% } %>
+  <a class="corner-link" href="./user/logout">Logout</a>
+<% } else {%>
+  <a class="corner-link" href="./login">Login</a>
+<% } %>
+
+</div>

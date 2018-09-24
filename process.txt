@@ -1,22 +1,51 @@
 The process
 
 TECH STACK
-DB has simple static setup (Orders, LineItems, Products, shops, etc.) At first I thought MySQL would be good because of the static relational structure, but auto-sharding + dynamic schemas means simple horizontal scaling (in case my store blows up)/easy schema manipulation if I forget to add properties.
-MongoDB
+DB has simple static setup (Orders, LineItems, Products, shops, etc.) At first I thought MySQL would be good because of the static relational structure, but dynamic schemas means I can easily restructure if I find out I need some new fields etc.
+---> MongoDB
 
 server NodeJs
-I'm looking for speed (in case my online store blows up). Node with its single threaded execution/non-blocking IO and the site would have any intensive server-side processing. 
-I know javascript pretty well/have worked with NodeJs (ES6)
-
-back-end framework
-express -- large community, graphql compatibility, lightweight, 
-
-front-end
-React -- virtualDOM makes client changes fast, modular development
-REDUX
+I want speed --> Node with its single threaded execution/non-blocking IO and the site would have any intensive server-side processing.
+I know javascript pretty well/have worked lightly with NodeJs (ES6)
 
 
-1. understand what the heck kubernetes and docker are
-I recently built my website using a react front-end with a simple node back-end (hosted on heroku) and mongodb (with mLab), so I had a bit of an idea about how those would fit in with my project. 
-I'd heard of kubernetes and docker but had no idea what they were.
-So before developing 
+back-end frameworks
+express js -- large community, compatibility, lightweight, simple routing
+ejs -- templating, helps enforce MVC
+mongoose js -- connects to mongodb, enforces schema structures
+
+testing
+mocha and chai
+
+
+step 1:
+Understand what a container is...
+Understand what the heck kubernetes and docker are and how they fit into the container ecosystem
+
+Started with completing tutorials to get a feel for each technology.
+DOCKER IS ACTUALLY REALLY COOL?! (this process of discovery was continued later)
+
+Step 2: figure out how to use express, and mongoose.
+I used express when building my personal website, but I only scratched the surface in terms of the features it offers.
+finished random tutorials on basic usage/routing.
+I would see tutorial steps that could be modified and directly applied to my project.
+Did the same with mongoose. --- Very intuitive schema definitions and methods
+Defined Schemas for User, Shop, Order, Product, LineItem
+
+step 3: How to manage sessions with login.
+I already knew I wanted to have some sort of login system (to control access), just needed to research how it could be done...
+---> express-session. Exactly what I was looking for! :))))))
+
+step 4: start creating tests
+Created end points for user creation, login and logout.
+Figured out how to setup js tests with mocha and chai via adapting tutorials
+CALLBACK HELL !!!!!
+Modified all the tests to use async await for readability and my own sanity
+
+step 5:
+build out Product, Shop, and Order schema methods
+
+step 6:
+create test scripts for Product, shop and order
+
+test with the db and live

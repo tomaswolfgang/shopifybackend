@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <% include ./partials/head %>
+  </head>
+
+  <body>
+    <div class="page-container">
+      <header>
+          <% include ./partials/header %>
+      </header>
+      <div class="content-container">
+        <div id="title-container">
+          <h1><%= shop.name %> History</h1>
+        </div>
+        <div id="content">
+          <% if(orders.length > 0){ %>
+            <% orders.forEach((orderWProducts) => { %>
+              <div class="history-order">
+                <p>Purchase Date: <%= orderWProducts.order.updatedAt %></p>
+                <div class="cart-item">
+                  <p>Name:</p>
+                  <p>Count:</p>
+                  <p>Price:</p>
+                </div>
+                <% orderWProducts.products.forEach((lineItem) => { %>
+                  <div class="cart-item">
+                    <p><%= lineItem.product.name %></p>
+                    <p><%= lineItem.count %></p>
+                    <p><%= lineItem.count * lineItem.product.price %></p>
+                  </div>
+                <% }) %>
+                <div class="cart-item">
+                  <p>Total: <%= orderWProducts.order.price %></p>
+                </div>
+              </div>
+            <% })}else{ %>
+              <p>You have no past orders at <%= shop.name %></p>
+            <% } %>
+        </div>
+        <div id="links">
+            <a href="./cart?shop=<%= shop._id %>"><%= shop.name %> cart</a><br><br>
+            <a href="./shop?shop=<%= shop._id %>">Go to <%= shop.name %></a><br>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

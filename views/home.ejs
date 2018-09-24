@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ./partials/head %>
+  </head>
+
+  <body>
+    <div class="page-container">
+      <header>
+          <% include ./partials/header %>
+      </header>
+      <div class="content-container">
+        <h1>Home</h1>
+        <div id="content">
+          <% shops.forEach((shop) => {  %>
+            <a href="./shop?shop=<%= shop._id %>"><%= shop.name %></a>
+          <% })%>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

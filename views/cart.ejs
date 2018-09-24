@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <% include ./partials/head %>
+  </head>
+
+  <body>
+    <div class="page-container">
+      <header>
+          <% include ./partials/header %>
+      </header>
+      <div class="content-container">
+        <div id="title-container">
+          <h1><%= locals.shop ? shop.name + " cart" : "Carts" %></h1>
+        </div>
+        <div id="content">
+          <% if(locals.shop && locals.cart){ %>
+            <% if(cart.products.length > 0){ %>
+              <div class="cart-item">
+                <p>Name:</p>
+                <p>Count:</p>
+                <p>Price:</p>
+                <p>Options:</p>
+
+              </div>
+              <% cart.products.forEach((lineItem) => {  %>
+                <div class="cart-item">
+                  <p><%= lineItem.product.name %></p>
+                  <p><%= lineItem.count %></p>
+                  <p><%= lineItem.count * lineItem.product.price %></p>
+                  <form class="" action="/order/remove" method="post">
+                    <input type="hidden" name="shopId" value="<%= shop._id %>">
+                    <input type="hidden" name="productId" value="<%=  lineItem.product._id %>">
+                    <input type="submit"  value="Remove one from cart">
+                  </form>
+                </div>
+            <% })%>
+            <div class="cart-item">
+              <p>Total: <%= cart.price %></p>
+            </div>
+            <form class="cart-checkout" action="/order/checkout" method="post">
+              <input type="hidden" name="shopId" value="<%= shop._id %>">
+              <input type="submit"  value="Checkout">
+            </form>
+            <% }else { %>
+              <p>There are no items in your cart</p>
+            <% } %>
+          <% } else if(locals.shops){ %>
+            <% shops.forEach((shop) => { %>
+              <a href="./cart?shop=<%= shop._id %>">Cart at <%= shop.name %></a>
+            <% }) %>
+          <% } %>
+        </div>
+        <div id="links">
+          <%  if(locals.shop){ %>
+
+            <a href="./history?shop=<%= shop._id %>"><%= shop.name %> Order history</a><br>
+            <a href="./shop?shop=<%= shop._id %>">Go to <%= shop.name %></a><br><br>
+            <a href="./cart">Back to all active carts</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

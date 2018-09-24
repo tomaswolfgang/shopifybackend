@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <% include ./partials/head %>
+  </head>
+
+  <body>
+    <div class="page-container">
+      <header>
+          <% include ./partials/header %>
+      </header>
+      <div class="content-container">
+        <div id="title-container">
+          <h1>Welcome to <%= shop.name %>!</h1>
+        </div>
+        <h2>Products:</h2>
+        <div id="content">
+          <% shop.products.forEach((product) => {  %>
+            <a href="./product?product=<%= product._id %>&shop=<%= shop._id %>"><%= product.name %></a><br>
+          <% })%>
+        </div>
+        <div id="links">
+          <a href="./home">back to home</a>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>

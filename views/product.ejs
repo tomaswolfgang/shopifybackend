@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <% include ./partials/head %>
+  </head>
+
+  <body>
+    <div class="page-container">
+      <header>
+          <% include ./partials/header %>
+      </header>
+      <div class="content-container">
+        <div id="title-container">
+          <h1><%= product.name %></h1>
+        </div>
+        <div id="content">
+          <h2><%= product.price %></h2>
+          <h3><%= product.description %></h3>
+          <% if(user){ %>
+            <p>You currently have <%= count %> in your cart</p>
+          <% } %>
+        </div>
+        <% if(user){ %>
+          <form class="" action="/order/add" method="POST">
+            <input type="hidden" name="shopId" value="<%= shop._id %>">
+            <input type="hidden" name="productId" value="<%= product._id %>">
+            <input type="submit"  value="Add to cart">
+          </form>
+        <% } %>
+        <div id="links">
+          <a href="./shop?shop=<%= shop._id %>">Back to <%= shop.name %></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
