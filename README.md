@@ -3,8 +3,9 @@ I'm going to outline the usage for this project
 
 DOCKER method:
 after running the docker image
-you can see the project at http://localhost:8080 or use your local ip address with port 8080 i.e. 192.168.10.100:3000
-if you install the dependencies for the project ("npm install" at the root) you can run the test scripts via "yarn test-order" and "yarn test-user"
+you can see the project at http://localhost:8080 or use your local ip address with port 8080 i.e. 192.168.10.100:3000.
+if you install the dependencies for the project ("npm install" at the root) you can run the test scripts via "yarn test-order" and "yarn test-user." 
+
   
   
 LIVE method:
